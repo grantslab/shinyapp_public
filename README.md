@@ -16,7 +16,7 @@
 
 ## GCI
 
-GCI application can predict effector target genes with given variant(s) , or predict cis-regulatory elements with a given gene, in various of cell type database generated in SFG. The current [cell type database](./GCI/db/ori_file_path.xlsx) used promoter capture C data (1frag and 4frag) and ATAC-seq data to build cis-regulatory-element-target-gene maps for more than 30 cell types sequenced in SFG. 
+GCI application can predict effector target genes with given variant(s) , or predict cis-regulatory elements with a given gene, in various of cell type database generated in SFG. The current [cell type database](https://github.com/grantslab/shinyapps/tree/main/GCI/db/ori_file_path.xlsx) used promoter capture C data (1frag and 4frag) and ATAC-seq data to build cis-regulatory-element-target-gene maps for more than 30 cell types sequenced in SFG. 
 
 ### How-To
 
@@ -80,8 +80,8 @@ Future update: proxy calculation is still very slow. I will work on speeding up 
 ### Development
 
 - The cell database is saved at `/mnt/isilon/sfgi/suc1/analyses/shinyapp_db`
-- [current database filepaths](./GCI/db/ori_file_path.xlsx)
-- [How to build database](./GCI/db/db_prep.md)
+- [current database filepaths](https://github.com/grantslab/shinyapps/tree/main/GCI/db/ori_file_path.xlsx)
+- [How to build database](https://github.com/grantslab/shinyapps/tree/main/GCI/db/db_prep.md)
 
 
 ## pancreatic Hi-C GCI
@@ -97,7 +97,7 @@ Current pancreatic Hi-C GCI were hosted at both [CHOP rstudio-connect](https://r
 
 ## immuneV2G
 
-immuneV2G host a database of pre-calculated V2G mapping which was generated using transcriptomic and epigenomic data (RNA-seq, ATAC-seq, promoter capture-C) from [immune cells](./immunoV2G/db/functional.csv), and variants from GWAS catalog (20200522) for [15 autoimmune diseases](./immunoV2G/db/genetic.csv). It allow users to select autoimmune disease(s) and define r-square, TPM and other filter, and report tables for variant-gene mapping, unique gene list and potential target drugs.
+immuneV2G host a database of pre-calculated V2G mapping which was generated using transcriptomic and epigenomic data (RNA-seq, ATAC-seq, promoter capture-C) from [immune cells](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/functional.csv), and variants from GWAS catalog (20200522) for [15 autoimmune diseases](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/genetic.csv). It allow users to select autoimmune disease(s) and define r-square, TPM and other filter, and report tables for variant-gene mapping, unique gene list and potential target drugs.
 
 autoimmune diseases:
 - multiple sclerosis
@@ -132,5 +132,5 @@ cell types:
 
 - v2g database is saved at `/mnt/isilon/sfgi/suc1/analyses/wells/captureC/Promoterome/comparison/immunePanel2/snp/gross_v2g`
 - gwas proxy calculation is saved at `/mnt/isilon/sfgi/suc1/gwascatolog/20200522/trait_proxy/`
-- [local database generation script](40_immunePanel2/snp/gross_v2g)
+- [Database generation script](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/create_tables.R)
 
