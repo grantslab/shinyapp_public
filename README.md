@@ -1,5 +1,5 @@
 
-*This is the public repo of [grantslab/shinyapps](https://github.com/grantslab/shinyapps) for documentation. The link below referring to database and script files are not accessible from this public repo* 
+*This is the public repo of [grantslab/shinyapps](https://github.com/grantslab/shinyapps) for documentation. The links below referring to database and script files are not accessible to public* 
 
 # Shiny Applications
 <!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
