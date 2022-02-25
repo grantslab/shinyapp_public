@@ -1,7 +1,4 @@
-
-*This is the public repo of [grantslab/shinyapps](https://github.com/grantslab/shinyapps) for documentation. The links below referring to database and script files are not accessible to public* 
-
-# Shiny Applications
+# Shiny Application
 <!-- TOC depthFrom:2 depthTo:4 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [GCI](#gci)
@@ -16,13 +13,13 @@
 
 ## GCI
 
-GCI application can predict effector target genes with given variant(s) , or predict cis-regulatory elements with a given gene, in various of cell type database generated in SFG. The current [cell type database](https://github.com/grantslab/shinyapps/tree/main/GCI/db/ori_file_path.xlsx) used promoter capture C data (1frag and 4frag) and ATAC-seq data to build cis-regulatory-element-target-gene maps for more than 30 cell types sequenced in SFG. 
+GCI application can predict effector target genes with given variant(s) , or predict cis-regulatory elements with a given gene, in various of cell type database generated in SFG. The current [cell type database](./GCI/db/ori_file_path.xlsx) used promoter capture C data (1frag and 4frag), Hi-C data (resolution 1kbp, 2kpb and 4kpb) and ATAC-seq data to build cis-regulatory-element-target-gene maps for more than 50 cell types sequenced in SFG. 
 
 ### How-To
 
-1. open [GCI app](https://rstudio-connect.chop.edu/connect/#/apps/1890)
+1. open [GCI app v06](https://rstudio-connect.chop.edu/connect/#/apps/2760)
   - require CHOP credentials
-  - for the first time user, it requires [app admin](mailto:suc1@chop.edu) to assign viewer permission.
+  - for the first time user, it requires [app admin](mailto:THOMPSONZ1@chop.edu) to assign viewer permission.
   - Note: It will take 1~2 mins to load UI and base database.
 
 2. select cell(s) using `Cells` dropdown menu you want to search.
@@ -54,6 +51,22 @@ GCI application can predict effector target genes with given variant(s) , or pre
 
 ### Releases
 
+#### [GCI_v06](https://rstudio-connect.chop.edu/connect/#/apps/2760) updates:
+- include Hi-C data from following cell types in
+  - Alpha_HiC
+  - Acinar_HiC
+  - Beta_HiC
+  - naiveTCD4_unstim_HiC
+  - naiveTCD4_8hr_HiC
+  - naiveTCD4_24hr_HiC
+  - NK_HiC
+  - pDC_HiC
+  - CD1cPluscDC_HiC
+  - PHMB_Myotube
+  
+*note: the current Alpha_HiC, Acinar_HiC, beta_HiC using single cell ATAC-seq as OCR calling*
+*note: the current NK_HiC, pDC_HiC, CD1cPluscDC_HiC and PHMB_Myotube used only loops called by fithic2*
+
 ##### [GCI_v05](https://rstudio-connect.chop.edu/connect/#/apps/1890) updates:
 
 - change proxy search database from myvariant to [LDlink](https://ldlink.nci.nih.gov/?tab=apiaccess). 
@@ -79,9 +92,9 @@ Future update: proxy calculation is still very slow. I will work on speeding up 
 
 ### Development
 
-- The cell database is saved at `/mnt/isilon/sfgi/suc1/analyses/shinyapp_db`
-- [current database filepaths](https://github.com/grantslab/shinyapps/tree/main/GCI/db/ori_file_path.xlsx)
-- [How to build database](https://github.com/grantslab/shinyapps/tree/main/GCI/db/db_prep.md)
+- The cell database is saved at `/mnt/isilon/sfgi/shinyapp_GCI_db`
+- [current database filepaths](./GCI/db/ori_file_path.xlsx)
+- [How to build database](./GCI/db/db_prep.md)
 
 
 ## pancreatic Hi-C GCI
@@ -97,7 +110,7 @@ Current pancreatic Hi-C GCI were hosted at both [CHOP rstudio-connect](https://r
 
 ## immuneV2G
 
-immuneV2G host a database of pre-calculated V2G mapping which was generated using transcriptomic and epigenomic data (RNA-seq, ATAC-seq, promoter capture-C) from [immune cells](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/functional.csv), and variants from GWAS catalog (20200522) for [15 autoimmune diseases](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/genetic.csv). It allow users to select autoimmune disease(s) and define r-square, TPM and other filter, and report tables for variant-gene mapping, unique gene list and potential target drugs.
+[immuneV2G(v03)](https://rstudio-connect.chop.edu/connect/#/apps/1678/access) host a database of pre-calculated V2G mapping which was generated using transcriptomic and epigenomic data (RNA-seq, ATAC-seq, promoter capture-C) from [immune cells](./immunoV2G/db/functional.csv), and variants from GWAS catalog (20200522) for [15 autoimmune diseases](./immunoV2G/db/genetic.csv). It allow users to select autoimmune disease(s) and define r-square, TPM and other filter, and report tables for variant-gene mapping, unique gene list and potential target drugs.
 
 autoimmune diseases:
 - multiple sclerosis
@@ -132,5 +145,5 @@ cell types:
 
 - v2g database is saved at `/mnt/isilon/sfgi/suc1/analyses/wells/captureC/Promoterome/comparison/immunePanel2/snp/gross_v2g`
 - gwas proxy calculation is saved at `/mnt/isilon/sfgi/suc1/gwascatolog/20200522/trait_proxy/`
-- [Database generation script](https://github.com/grantslab/shinyapps/tree/main/immunoV2G/db/create_tables.R)
+- [local database generation script](./immunoV2G/db/create_tables.R)
 
